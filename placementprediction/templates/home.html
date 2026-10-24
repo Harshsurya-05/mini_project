@@ -1,11 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Home Page</title>
 
     <style>
@@ -17,184 +15,144 @@
 
         body {
             min-height: 100vh;
-            font-family: "Segoe UI", Arial, sans-serif;
-
+            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
-
-            background:
-                radial-gradient(circle at 20% 20%, rgba(0, 238, 255, 0.18), transparent 30%),
-                radial-gradient(circle at 80% 80%, rgba(140, 0, 255, 0.20), transparent 30%),
-                linear-gradient(135deg, #080b18, #111936, #080b18);
-
+            background: linear-gradient(135deg, #071426, #0b1f38, #071426);
             color: white;
         }
 
         /* Main Card */
-
         .container {
-            width: 500px;
-            padding: 50px 45px;
-
+            width: 90%;
+            max-width: 430px;
+            padding: 45px 35px;
             text-align: center;
 
-            background: rgba(255, 255, 255, 0.08);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-
-            border-radius: 30px;
-
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
+            background: #0d1b2e;
+            border: 1px solid #1e3a5f;
+            border-radius: 18px;
 
             box-shadow:
-                0 25px 70px rgba(0, 0, 0, 0.55),
-                inset 0 1px 1px rgba(255, 255, 255, 0.1);
-
-            animation: appear 0.8s ease;
+                0 15px 40px rgba(0, 0, 0, 0.5),
+                0 0 25px rgba(0, 183, 255, 0.08);
         }
 
         /* Heading */
-
         h1 {
-            font-size: 42px;
+            font-size: 36px;
             margin-bottom: 12px;
+            color: #ffffff;
+            font-weight: bold;
+        }
 
-            background: linear-gradient(
-                90deg,
-                #00eaff,
-                #ffffff,
-                #a855f7
-            );
-
-            background-clip: text;
-            color: transparent;
-
-            letter-spacing: 1px;
+        /* Blue line under heading */
+        h1::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 4px;
+            margin: 12px auto 20px;
+            border-radius: 10px;
+            background: #00b7ff;
         }
 
         /* Subtitle */
-
         .subtitle {
-            color: rgba(255, 255, 255, 0.65);
-            font-size: 16px;
-            margin-bottom: 40px;
+            color: #9fb3c8;
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 32px;
         }
 
-        /* Forms */
-
+        /* Form spacing */
         form {
-            margin: 18px 0;
+            margin: 15px 0;
         }
 
-        /* Buttons */
-
+        /* Common Button CSS */
         input[type="submit"] {
             width: 100%;
-            height: 58px;
+            height: 52px;
 
             border: none;
-            border-radius: 15px;
+            border-radius: 10px;
 
             color: white;
-
-            font-size: 18px;
-            font-weight: 600;
-
-            letter-spacing: 0.5px;
+            font-size: 16px;
+            font-weight: bold;
 
             cursor: pointer;
 
-            transition: all 0.3s ease;
+            transition: 0.3s;
         }
 
-        /* Register Button */
-
+        /* Registration Button */
         .register-btn {
-            background: linear-gradient(
-                135deg,
-                #00eaff,
-                #0077ff
-            );
-
-            box-shadow:
-                0 8px 25px rgba(0, 170, 255, 0.25);
+            background: #008cff;
+            box-shadow: 0 5px 15px rgba(0, 140, 255, 0.25);
         }
 
         .register-btn:hover {
-            transform: translateY(-4px);
+            background: #00a6ff;
+            transform: translateY(-3px);
 
             box-shadow:
-                0 0 25px rgba(0, 234, 255, 0.5),
-                0 12px 30px rgba(0, 119, 255, 0.3);
+                0 8px 20px rgba(0, 166, 255, 0.35);
         }
 
         /* Login Button */
-
         .login-btn {
-            background: linear-gradient(
-                135deg,
-                #8b5cf6,
-                #d946ef
-            );
-
-            box-shadow:
-                0 8px 25px rgba(168, 85, 247, 0.25);
+            background: transparent;
+            border: 2px solid #00b7ff !important;
+            color: #00b7ff !important;
         }
 
         .login-btn:hover {
-            transform: translateY(-4px);
+            background: #00b7ff;
+            color: white !important;
+
+            transform: translateY(-3px);
 
             box-shadow:
-                0 0 25px rgba(168, 85, 247, 0.5),
-                0 12px 30px rgba(217, 70, 239, 0.3);
+                0 8px 20px rgba(0, 183, 255, 0.25);
         }
 
+        /* Button Click Effect */
         input[type="submit"]:active {
             transform: scale(0.97);
         }
 
-        /* Small text */
-
+        /* Bottom Text */
         .bottom-text {
             margin-top: 30px;
-            color: rgba(255, 255, 255, 0.45);
-            font-size: 13px;
+
+            color: #647b91;
+            font-size: 11px;
+
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
-        /* Animation */
-
-        @keyframes appear {
-            from {
-                opacity: 0;
-                transform: translateY(30px) scale(0.96);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0) scale(1);
-            }
-        }
-
-        /* Mobile */
-
-        @media (max-width: 600px) {
-
-            body {
-                padding: 20px;
-            }
+        /* Responsive */
+        @media (max-width: 480px) {
 
             .container {
-                width: 100%;
-                padding: 40px 25px;
+                padding: 35px 22px;
             }
 
             h1 {
-                font-size: 34px;
+                font-size: 30px;
+            }
+
+            .subtitle {
+                font-size: 14px;
             }
 
             input[type="submit"] {
-                height: 55px;
+                height: 50px;
+                font-size: 15px;
             }
         }
     </style>
@@ -204,17 +162,14 @@
 
     <div class="container">
 
-        <h1>Welcome</h1>
+        <h1>Welcome Back</h1>
 
         <p class="subtitle">
-            This is your home page. Choose an option below to continue.
+            Choose an option below to access your account or register a new one.
         </p>
 
-
         <!-- Registration -->
-
         <form action="{% url 'studentreg' %}" method="post">
-
             {% csrf_token %}
 
             <input
@@ -222,14 +177,10 @@
                 value="Student Registration"
                 class="register-btn"
             >
-
         </form>
 
-
         <!-- Login -->
-
         <form action="{% url 'login' %}" method="post">
-
             {% csrf_token %}
 
             <input
@@ -237,9 +188,7 @@
                 value="Login"
                 class="login-btn"
             >
-
         </form>
-
 
         <p class="bottom-text">
             Secure • Simple • Fast
@@ -250,4 +199,3 @@
 </body>
 
 </html>
-

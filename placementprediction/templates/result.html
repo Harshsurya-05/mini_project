@@ -27,192 +27,226 @@
 
             padding: 20px;
 
-            font-family: "Segoe UI", Arial, sans-serif;
+            font-family: Arial, sans-serif;
 
             color: white;
 
-            background:
-                radial-gradient(
-                    circle at 15% 20%,
-                    rgba(0, 234, 255, 0.18),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 85% 80%,
-                    rgba(168, 85, 247, 0.20),
-                    transparent 30%
-                ),
-                linear-gradient(
-                    135deg,
-                    #080b18,
-                    #111936,
-                    #080b18
-                );
+            background: linear-gradient(
+                135deg,
+                #071426,
+                #0b1f38,
+                #071426
+            );
         }
 
-        /* Main Result Card */
+
+        /* =========================
+           MAIN RESULT CARD
+        ========================= */
 
         .result-container {
 
-            width: 550px;
+            width: 100%;
+            max-width: 550px;
 
-            padding: 50px 40px;
+            padding: 45px 35px;
 
             text-align: center;
 
-            background: rgba(255, 255, 255, 0.08);
+            background: #0d1b2e;
 
-            border: 1px solid rgba(255, 255, 255, 0.18);
+            border: 1px solid #1e3a5f;
 
-            border-radius: 30px;
-
-            backdrop-filter: blur(20px);
+            border-radius: 18px;
 
             box-shadow:
-                0 25px 70px rgba(0, 0, 0, 0.55),
-                inset 0 1px 1px rgba(255, 255, 255, 0.1);
+                0 15px 40px rgba(0, 0, 0, 0.5),
+                0 0 25px rgba(0, 183, 255, 0.08);
 
-            animation: showCard 0.7s ease;
+            animation: showCard 0.6s ease;
         }
 
-        /* Heading */
+
+        /* =========================
+           HEADING
+        ========================= */
 
         h1 {
 
-            font-size: 38px;
+            font-size: 36px;
 
-            margin-bottom: 25px;
+            font-weight: bold;
 
-            background:
-                linear-gradient(
-                    90deg,
-                    #00eaff,
-                    #ffffff,
-                    #a855f7
-                );
+            color: #ffffff;
 
-            background-clip: text;
-
-            color: transparent;
+            margin-bottom: 12px;
         }
 
-        /* User entered value */
+
+        /* Blue Line Under Heading */
+
+        h1::after {
+
+            content: "";
+
+            display: block;
+
+            width: 60px;
+            height: 4px;
+
+            margin: 12px auto 28px;
+
+            border-radius: 10px;
+
+            background: #00b7ff;
+        }
+
+
+        /* =========================
+           USER VALUE BOX
+        ========================= */
 
         .value-box {
 
-            padding: 18px;
+            padding: 20px;
 
-            margin-bottom: 30px;
+            margin-bottom: 25px;
 
-            border-radius: 15px;
+            border-radius: 10px;
 
-            background: rgba(0, 0, 0, 0.25);
+            background: #091728;
 
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid #294766;
 
-            color: rgba(255, 255, 255, 0.75);
+            color: #9fb3c8;
 
-            font-size: 17px;
+            font-size: 15px;
+
+            line-height: 1.6;
         }
+
+
+        /* Entered Value */
 
         .value-box span {
 
-            color: #00eaff;
+            display: inline-block;
 
-            font-weight: 700;
+            color: #00b7ff;
+
+            font-size: 18px;
+
+            font-weight: bold;
+
+            word-break: break-word;
         }
 
-        /* Result Box */
+
+        /* =========================
+           RESULT BOX
+        ========================= */
 
         .result-box {
 
-            padding: 30px 20px;
+            padding: 28px 20px;
 
-            border-radius: 20px;
+            border-radius: 12px;
 
-            background: rgba(255, 255, 255, 0.05);
+            background: #091728;
 
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid #294766;
 
+            transition: 0.3s;
         }
 
-        /* Congratulations */
+
+        /* =========================
+           SUCCESS RESULT
+        ========================= */
 
         .success {
 
-            border-color: rgba(0, 255, 170, 0.35);
+            border-color: #16a66a;
+
+            background: rgba(22, 166, 106, 0.05);
 
             box-shadow:
-                0 0 30px rgba(0, 255, 170, 0.10);
+                0 5px 20px rgba(22, 166, 106, 0.08);
         }
+
 
         .success h2:first-child {
 
-            color: #00ffb3;
+            color: #2ddc8c;
 
-            font-size: 30px;
+            font-size: 28px;
 
-            margin-bottom: 15px;
-
+            margin-bottom: 14px;
         }
+
 
         .success h2:last-child {
 
-            color: rgba(255, 255, 255, 0.85);
+            color: #c7d6e5;
 
-            font-size: 20px;
+            font-size: 19px;
 
             font-weight: 500;
         }
 
-        /* Sorry */
+
+        /* =========================
+           FAILURE RESULT
+        ========================= */
 
         .failure {
 
-            border-color: rgba(255, 90, 110, 0.35);
+            border-color: #b94355;
+
+            background: rgba(185, 67, 85, 0.05);
 
             box-shadow:
-                0 0 30px rgba(255, 70, 90, 0.10);
+                0 5px 20px rgba(185, 67, 85, 0.08);
         }
+
 
         .failure h2:first-child {
 
-            color: #ff6b81;
+            color: #ff7185;
 
-            font-size: 30px;
+            font-size: 28px;
 
-            margin-bottom: 15px;
-
+            margin-bottom: 14px;
         }
+
 
         .failure h2:last-child {
 
-            color: rgba(255, 255, 255, 0.85);
+            color: #c7d6e5;
 
-            font-size: 20px;
+            font-size: 19px;
 
             font-weight: 500;
         }
 
-        /* Back Button */
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
 
         .back-btn {
 
             display: inline-block;
 
-            margin-top: 30px;
+            width: 100%;
 
-            padding: 14px 30px;
+            margin-top: 28px;
 
-            border-radius: 12px;
+            padding: 15px 25px;
 
-            background:
-                linear-gradient(
-                    135deg,
-                    #00eaff,
-                    #0077ff,
-                    #8b5cf6
-                );
+            border-radius: 10px;
+
+            background: #008cff;
 
             color: white;
 
@@ -220,28 +254,39 @@
 
             font-size: 16px;
 
-            font-weight: 600;
+            font-weight: bold;
 
-            transition: 0.3s ease;
+            transition: 0.3s;
 
             box-shadow:
-                0 8px 25px rgba(0, 119, 255, 0.25);
+                0 5px 15px rgba(0, 140, 255, 0.25);
         }
+
+
+        /* Back Button Hover */
 
         .back-btn:hover {
 
-            transform: translateY(-4px);
+            background: #00a6ff;
+
+            transform: translateY(-3px);
 
             box-shadow:
-                0 0 25px rgba(0, 234, 255, 0.45);
+                0 8px 20px rgba(0, 166, 255, 0.35);
         }
+
+
+        /* Back Button Click */
 
         .back-btn:active {
 
-            transform: scale(0.96);
+            transform: scale(0.97);
         }
 
-        /* Animation */
+
+        /* =========================
+           ANIMATION
+        ========================= */
 
         @keyframes showCard {
 
@@ -249,49 +294,53 @@
 
                 opacity: 0;
 
-                transform:
-                    translateY(30px)
-                    scale(0.95);
+                transform: translateY(25px);
             }
 
             to {
 
                 opacity: 1;
 
-                transform:
-                    translateY(0)
-                    scale(1);
+                transform: translateY(0);
             }
         }
 
-        /* Mobile */
+
+        /* =========================
+           MOBILE RESPONSIVE
+        ========================= */
 
         @media (max-width: 600px) {
 
             .result-container {
 
-                width: 100%;
-
-                padding: 40px 25px;
-
-                border-radius: 24px;
+                padding: 35px 22px;
             }
+
 
             h1 {
 
-                font-size: 32px;
+                font-size: 30px;
             }
+
 
             .success h2:first-child,
             .failure h2:first-child {
 
-                font-size: 25px;
+                font-size: 24px;
             }
+
 
             .success h2:last-child,
             .failure h2:last-child {
 
                 font-size: 17px;
+            }
+
+
+            .value-box {
+
+                font-size: 14px;
             }
         }
 
@@ -302,10 +351,18 @@
 
 <body>
 
+
     <div class="result-container">
 
-        <h1>Placement Result</h1>
 
+        <!-- Heading -->
+
+        <h1>
+            Placement Result
+        </h1>
+
+
+        <!-- User Entered Values -->
 
         <div class="value-box">
 
@@ -313,16 +370,25 @@
 
             <br><br>
 
-            <span>{{ lis }}</span>
+            <span>
+                {{ lis }}
+            </span>
 
         </div>
 
 
+        <!-- Placement Result -->
+
         {% if ans == 1 %}
+
+
+            <!-- SUCCESS -->
 
             <div class="result-box success">
 
-                <h2>Congratulations! 🎉</h2>
+                <h2>
+                    Congratulations! 🎉
+                </h2>
 
                 <h2>
                     Student ko placement milegi.
@@ -330,11 +396,17 @@
 
             </div>
 
+
         {% else %}
+
+
+            <!-- FAILURE -->
 
             <div class="result-box failure">
 
-                <h2>Sorry! 😔</h2>
+                <h2>
+                    Sorry! 😔
+                </h2>
 
                 <h2>
                     Student is not Eligible for placement.
@@ -342,14 +414,21 @@
 
             </div>
 
+
         {% endif %}
 
 
+        <!-- Back Button -->
+
         <a href="{% url 'login' %}" class="back-btn">
+
             Back to Login
+
         </a>
 
+
     </div>
+
 
 </body>
 
